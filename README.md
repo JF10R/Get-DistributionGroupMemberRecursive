@@ -1,6 +1,13 @@
 # Get-DistributionGroupMemberRecursive
 PowerShell script used to recursively get a list of all members within a Distribution Group.
 
+## How to use
+
+1. Execute the function code.
+2. Call the function:  
+    
+       Get-DistributionGroupMemberRecursive -Group "GroupName" | Export-csv -Path C:\test.csv -Delimiter ',' -Encoding 'UTF8'
+
 # Initializing the connection (Office 365)  
 
 Here is how to setup the connection with Office 365 Exchange servers through Powershell:
