@@ -4,7 +4,8 @@ PowerShell script used to recursively get a list of all members within a Distrib
 # Initializing the connection (Office 365)  
 
 Here is how to setup the connection with Office 365 Exchange servers through Powershell:
-    
+
+    Set-ExecutionPolicy RemoteSigned    
     $365Logon = Get-Credential
     $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $365Logon -Authentication Basic -AllowRedirection
     
