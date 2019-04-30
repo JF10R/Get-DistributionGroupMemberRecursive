@@ -1,6 +1,7 @@
 
-function Get-DistributionGroupMemberRecursive ($GroupIdentity) {
-  $member_list = Get-DistributionGroupMember -Identity $GroupIdentity
+function Get-DistributionGroupMemberRecursive ($GroupName) {
+  $group = Get-DistributionGroup $GroupName
+  $member_list = Get-DistributionGroupMember -Identity $group.Identity
   foreach ($member in $member_list) {
     if ($member.RecipientType -like '*Group*') {
        Get-DistributionGroupMemberRecursive -GroupIdentity $member.Identity
@@ -10,4 +11,4 @@ function Get-DistributionGroupMemberRecursive ($GroupIdentity) {
   }
 }
 #$group = Get-DistributionGroup "GroupName"
-#Get-DistributionGroupMemberRecursive -GroupIdentity $group.Identity | Export-csv -Path C:\test.csv -Delimiter ';' -Encoding 'UTF8'
+#Get-DistributionGroupMemberRecursive -Group $group.Identity | Export-csv -Path C:\test.csv -Delimiter ';' -Encoding 'UTF8'
