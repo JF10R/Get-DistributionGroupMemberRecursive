@@ -23,3 +23,4 @@ If you have large Distribution Groups, make sure to ajust the `ResultSize` param
 # Credits
 
 Thanks to [Mike Goldwin](https://social.technet.microsoft.com/Forums/ie/en-US/d6be3ddd-95fd-4b57-96e3-cb9f4d4f27db/getdistributiongroupmember-recursive-functionality?forum=winserverpowershell) for his original code.
+Thanks to [JScott](https://stackoverflow.com/a/21042554/1451422) for column header labels code.
