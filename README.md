@@ -5,6 +5,7 @@ PowerShell script used to recursively get a list of all members within a Distrib
 
 Here is how to setup the connection with Office 365 Exchange servers through Powershell:
     
+    $365Logon = Get-Credential
     $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $365Logon -Authentication Basic -AllowRedirection
     
 If you have large Distribution Groups, make sure to ajust the `ResultSize` parameter of [`Get-DistributionGroup`](https://docs.microsoft.com/en-us/powershell/module/exchange/users-and-groups/get-distributiongroup?view=exchange-ps):
