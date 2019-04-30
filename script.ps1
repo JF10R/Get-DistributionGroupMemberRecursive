@@ -6,9 +6,9 @@ function Get-DistributionGroupMemberRecursive ($GroupName) {
     if ($member.RecipientType -like '*Group*') {
        Get-DistributionGroupMemberRecursive -GroupIdentity $member.Identity
     } else {
-      $member | Select-Object WindowsLiveID, Identity
+      $member | Select-Object @{expression={$_.WindowsLiveID}; label='Email Address'}, @{expression={$_.Identity}; label='First Name'}
     }
   }
 }
 
-#Get-DistributionGroupMemberRecursive -Group "GroupName" | Export-csv -Path C:\test.csv -Delimiter ';' -Encoding 'UTF8'
+#Get-DistributionGroupMemberRecursive -Group "GroupName" | Export-csv -Path C:\test.csv -Delimiter ',' -Encoding 'UTF8'
