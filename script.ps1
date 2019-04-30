@@ -6,7 +6,7 @@ function Get-DistributionGroupMemberRecursive ($GroupName) {
     if ($member.RecipientType -like '*Group*') {
        Get-DistributionGroupMemberRecursive -GroupIdentity $member.Identity
     } else {
-      $member | Select-Object @{expression={$_.WindowsLiveID}; label='Email Address'}, @{expression={$_.Identity}; label='First Name'}
+      $member | Select-Object @{expression={$_.WindowsLiveID}; label='Email Address'},@{expression={$_.FirstName}; label='First Name'},@{expression={$_.LastName}; label='Last Name'}
     }
   }
 }
