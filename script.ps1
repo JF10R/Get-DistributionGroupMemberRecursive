@@ -10,5 +10,5 @@ function Get-DistributionGroupMemberRecursive ($GroupName) {
     }
   }
 }
-#$group = Get-DistributionGroup "GroupName"
-#Get-DistributionGroupMemberRecursive -Group $group.Identity | Export-csv -Path C:\test.csv -Delimiter ';' -Encoding 'UTF8'
+
+#Get-DistributionGroupMemberRecursive -Group "GroupName" | Export-csv -Path C:\test.csv -Delimiter ';' -Encoding 'UTF8'
